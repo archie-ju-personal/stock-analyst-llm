@@ -298,19 +298,7 @@ Write in clear, professional language suitable for senior executives and investm
         except Exception as e:
             # Fallback to a basic summary if LLM fails
             return f"""
-# Executive Summary: {ticker.upper()} Investment Analysis
-
-## Overview
-This analysis presents a comprehensive evaluation of {ticker} based on financial market data, social media sentiment, news analysis, and fundamental metrics. The analysis involved multiple rounds of debate between bullish and bearish perspectives to ensure balanced consideration of all factors.
-
-## Key Findings
-The analysis reveals both opportunities and risks for {ticker}. The bull case emphasizes growth potential, competitive advantages, and positive indicators, while the bear case highlights risks, challenges, and negative indicators. The debate process has identified the most critical factors for investment decision-making.
-
-## Investment Recommendation
-Based on the comprehensive analysis, a recommendation with confidence level. Key factors to monitor include specific metrics or events.
-
-## Risk Factors
-Primary risks include key risks identified in the analysis. Investors should closely monitor specific indicators for changes in the investment thesis.
+LLM failed to generate executive summary.
 """
     
     def _print_data_summary(self):

@@ -1,0 +1,24 @@
+# OpenAI API for LLM functionality
+OPENAI_API_KEY=your_openai_api_key_here
+
+# Financial Data APIs
+YAHOO_FINANCE_API_KEY=your_yahoo_finance_key_here
+ALPHA_VANTAGE_API_KEY=your_alpha_vantage_key_here
+FINNHUB_API_KEY=your_finnhub_key_here
+
+# News and Social Media APIs
+NEWS_API_KEY=your_news_api_key_here
+TWITTER_API_KEY=your_twitter_api_key_here
+TWITTER_API_SECRET=your_twitter_api_secret_here
+TWITTER_ACCESS_TOKEN=your_twitter_access_token_here
+TWITTER_ACCESS_TOKEN_SECRET=your_twitter_access_token_secret_here
+
+# Reddit API
+REDDIT_CLIENT_ID=your_reddit_client_id_here
+REDDIT_CLIENT_SECRET=your_reddit_client_secret_here
+REDDIT_USER_AGENT=your_reddit_user_agent_here
+
+# Configuration
+DEFAULT_LLM_MODEL=gpt-4
+DEFAULT_DEBATE_ROUNDS=3
+DEBUG_MODE=False 
