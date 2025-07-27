@@ -84,11 +84,20 @@ class FundamentalAgent(BaseAgent):
     def _get_earnings_data(self, stock: yf.Ticker) -> Dict[str, Any]:
         """Get earnings data."""
         try:
-            earnings = stock.earnings
+            # Use income statement instead of deprecated earnings
+            income_stmt = stock.income_stmt
             calendar = stock.calendar
             
+            # Extract Net Income from income statement
+            earnings_data = {}
+            if income_stmt is not None and not income_stmt.empty:
+                if 'Net Income' in income_stmt.columns:
+                    earnings_data = income_stmt['Net Income'].to_dict()
+                elif 'Net Income Common Stockholders' in income_stmt.columns:
+                    earnings_data = income_stmt['Net Income Common Stockholders'].to_dict()
+            
             return {
-                "earnings": earnings.to_dict() if earnings is not None else {},
+                "earnings": earnings_data,
                 "calendar": calendar.to_dict() if calendar is not None else {}
             }
             

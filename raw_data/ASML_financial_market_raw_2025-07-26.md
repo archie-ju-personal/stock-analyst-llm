@@ -1,6 +1,6 @@
 # Raw Financial Market Data for ASML
 
-**Collection Date:** 2025-07-26T16:57:40.692261
+**Collection Date:** 2025-07-26T17:34:38.657620
 
 ## Data Source: Yahoo Finance
 
@@ -62,10 +62,10 @@
         "Stock Splits": 0.0
       },
       {
-        "Open": 744.3963460315717,
-        "High": 750.8741520092607,
-        "Low": 734.1272935547478,
-        "Close": 735.65966796875,
+        "Open": 744.3964077915801,
+        "High": 750.8742143067104,
+        "Low": 734.1273544627682,
+        "Close": 735.6597290039062,
         "Volume": 2125700,
         "Dividends": 0.0,
         "Stock Splits": 0.0
@@ -98,10 +98,10 @@
         "Stock Splits": 0.0
       },
       {
-        "Open": 734.0476373961302,
-        "High": 738.7443031117307,
-        "Low": 731.380877259236,
-        "Close": 735.4805297851562,
+        "Open": 734.0476983123752,
+        "High": 738.744364417737,
+        "Low": 731.3809379541752,
+        "Close": 735.4805908203125,
         "Volume": 1120200,
         "Dividends": 0.0,
         "Stock Splits": 0.0
@@ -1163,14 +1163,14 @@
   },
   "technical_indicators": {
     "sma_50": 765.2258020019531,
-    "rsi": 35.73423047527709,
-    "macd": -15.137342466269615,
-    "macd_signal": -4.913922562669426,
-    "macd_histogram": -10.223419903600188,
-    "bollinger_upper": 847.901213226366,
+    "rsi": 35.734230476322935,
+    "macd": -15.137342467310418,
+    "macd_signal": -4.913922564199924,
+    "macd_histogram": -10.223419903110495,
+    "bollinger_upper": 847.9012132263659,
     "bollinger_middle": 770.3525024414063,
-    "bollinger_lower": 692.8037916564465,
-    "atr": 19.907040734874073
+    "bollinger_lower": 692.8037916564466,
+    "atr": 19.907040735329243
   },
   "market_info": {
     "address1": "De Run 6501",
@@ -1383,7 +1383,31 @@
     "quoteSourceName": "Nasdaq Real Time Price",
     "triggerable": "True",
     "customPriceAlertConfidence": "HIGH",
+    "shortName": "ASML Holding N.V. - New York Re",
+    "longName": "ASML Holding N.V.",
+    "regularMarketChangePercent": "-1.90738",
+    "regularMarketPrice": "711.25",
+    "exchange": "NMS",
+    "messageBoardId": "finmb_388904",
+    "exchangeTimezoneName": "America/New_York",
+    "exchangeTimezoneShortName": "EDT",
+    "gmtOffSetMilliseconds": "-14400000",
+    "market": "us_market",
+    "esgPopulated": "False",
     "marketState": "CLOSED",
+    "corporateActions": [
+      {
+        "header": "Dividend",
+        "message": "ASML announced a cash dividend of 1.856 with an ex-date of Jul. 29, 2025",
+        "meta": {
+          "eventType": "DIVIDEND",
+          "dateEpochMs": "1753761600000",
+          "amount": "1.856"
+        }
+      }
+    ],
+    "postMarketTime": "1753487976",
+    "regularMarketTime": "1753473601",
     "hasPrePostMarketData": "True",
     "firstTradeDateMilliseconds": "795277800000",
     "postMarketChangePercent": "0.126541",
@@ -1418,30 +1442,6 @@
     "exchangeDataDelayedBy": "0",
     "averageAnalystRating": "1.8 - Buy",
     "cryptoTradeable": "False",
-    "shortName": "ASML Holding N.V. - New York Re",
-    "longName": "ASML Holding N.V.",
-    "corporateActions": [
-      {
-        "header": "Dividend",
-        "message": "ASML announced a cash dividend of 1.856 with an ex-date of Jul. 29, 2025",
-        "meta": {
-          "eventType": "DIVIDEND",
-          "dateEpochMs": "1753761600000",
-          "amount": "1.856"
-        }
-      }
-    ],
-    "postMarketTime": "1753487976",
-    "regularMarketTime": "1753473601",
-    "exchange": "NMS",
-    "messageBoardId": "finmb_388904",
-    "exchangeTimezoneName": "America/New_York",
-    "exchangeTimezoneShortName": "EDT",
-    "gmtOffSetMilliseconds": "-14400000",
-    "market": "us_market",
-    "esgPopulated": "False",
-    "regularMarketChangePercent": "-1.90738",
-    "regularMarketPrice": "711.25",
     "displayName": "ASML Holding",
     "trailingPegRatio": "1.428"
   },

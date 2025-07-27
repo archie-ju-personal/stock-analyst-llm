@@ -44,8 +44,18 @@ class FinancialMarketAgent(BaseAgent):
             # Get current market info
             info = stock.info
             
-            # Get recent earnings data
-            earnings = stock.earnings if hasattr(stock, 'earnings') else None
+            # Get recent earnings data (Net Income from income statement)
+            earnings = None
+            try:
+                income_stmt = stock.income_stmt
+                if income_stmt is not None and not income_stmt.empty:
+                    # Get the most recent Net Income
+                    if 'Net Income' in income_stmt.columns:
+                        earnings = income_stmt['Net Income'].iloc[-1]
+                    elif 'Net Income Common Stockholders' in income_stmt.columns:
+                        earnings = income_stmt['Net Income Common Stockholders'].iloc[-1]
+            except Exception as e:
+                print(f"Could not fetch earnings data: {e}")
             
             return {
                 "ticker": ticker,

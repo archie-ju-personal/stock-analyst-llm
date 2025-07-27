@@ -8,6 +8,25 @@ import os
 import sys
 from pathlib import Path
 
+# Add project dependencies here
+install_requires=[
+    "python-dotenv",
+    "rich",
+    "pandas",
+    "numpy",
+    "yfinance",
+    "finnhub-python",
+    "requests",
+    "beautifulsoup4",
+    "lxml",
+    "langchain",
+    "langchain-openai",
+    "langgraph",
+    "tavily-python",
+    "langchain-community",
+    "tweepy"
+],
+
 def create_env_file():
     """Create a .env file from the example if it doesn't exist."""
     env_file = Path('.env')

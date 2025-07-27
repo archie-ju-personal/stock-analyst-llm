@@ -9,17 +9,29 @@ from datetime import datetime, timedelta
 import os
 import finnhub
 from .base_agent import BaseAgent
+import requests
+from bs4 import BeautifulSoup
+from langchain_tavily import TavilySearch
+import pytz
+import tweepy
+from urllib.parse import urlparse
 
 class SocialMediaAgent(BaseAgent):
     """Agent responsible for collecting and analyzing social media sentiment."""
     
     def __init__(self, model_name: str = "gpt-4", temperature: float = 0.1):
         super().__init__(model_name, temperature)
-        self.reddit_client_id = os.getenv("REDDIT_CLIENT_ID")
-        self.reddit_client_secret = os.getenv("REDDIT_CLIENT_SECRET")
-        self.reddit_user_agent = os.getenv("REDDIT_USER_AGENT", "StockAnalystBot/1.0")
+        # Use the Bearer Token for app-only authentication
+        self.twitter_bearer_token = os.getenv("TWITTER_BEARER_TOKEN")
+
         # Initialize Finnhub client
         self.finnhub_client = finnhub.Client(api_key=os.getenv("FINNHUB_API_KEY"))
+
+        # Initialize Tweepy client using the Bearer Token
+        if self.twitter_bearer_token:
+            self.tweepy_client = tweepy.Client(self.twitter_bearer_token)
+        else:
+            self.tweepy_client = None
     
     def collect_data(self, ticker: str) -> Dict[str, Any]:
         """
@@ -36,6 +48,7 @@ class SocialMediaAgent(BaseAgent):
                 "ticker": ticker,
                 "finnhub_sentiment": self._collect_finnhub_sentiment(ticker),
                 "web_sentiment": self._collect_web_sentiment(ticker),
+                "twitter_sentiment": self._collect_twitter_data(ticker),
                 "sentiment_summary": {}
             }
             
@@ -46,6 +59,50 @@ class SocialMediaAgent(BaseAgent):
             
         except Exception as e:
             return {"error": f"Error collecting social media data: {str(e)}"}
+    
+
+    
+    def _collect_twitter_data(self, ticker: str) -> Dict[str, Any]:
+        """Collect and analyze sentiment from Twitter."""
+        if not self.tweepy_client:
+            return {"error": "Twitter API client not initialized. Check your Bearer Token."}
+
+        try:
+            # Construct a search query for recent, relevant tweets
+            query = f'"{ticker}" OR "${ticker}" lang:en -is:retweet'
+            
+            # Use the search_recent_tweets endpoint
+            response = self.tweepy_client.search_recent_tweets(
+                query,
+                tweet_fields=["text", "created_at", "public_metrics"],
+                max_results=100  # Fetch up to 100 recent tweets
+            )
+
+            tweets = response.data
+            if not tweets:
+                return {"tweets": [], "total_tweets": 0, "sentiment_distribution": {"positive": 0, "negative": 0, "neutral": 0}}
+
+            processed_tweets = []
+            for tweet in tweets:
+                sentiment = self._analyze_news_sentiment(tweet.text)
+                processed_tweets.append({
+                    "text": tweet.text,
+                    "created_at": tweet.created_at.isoformat(),
+                    "sentiment": sentiment,
+                    "retweets": tweet.public_metrics.get('retweet_count', 0),
+                    "likes": tweet.public_metrics.get('like_count', 0),
+                })
+            
+            sentiment_distribution = self._calculate_sentiment_distribution(processed_tweets)
+
+            return {
+                "tweets": processed_tweets,
+                "total_tweets": len(processed_tweets),
+                "sentiment_distribution": sentiment_distribution,
+                "source": "Twitter API"
+            }
+        except Exception as e:
+            return {"error": f"Error fetching from Twitter API: {str(e)}"}
     
     def _collect_web_sentiment(self, ticker: str) -> Dict[str, Any]:
         """Collect sentiment data from web search."""
@@ -89,68 +146,67 @@ class SocialMediaAgent(BaseAgent):
             return {"error": f"Error collecting web sentiment: {str(e)}"}
     
     def _perform_web_search(self, query: str) -> List[Dict[str, Any]]:
-        """Perform a web search and return results."""
+        """Perform a web search using Tavily and return results."""
         try:
-            # Google Custom Search API implementation
-            google_api_key = os.getenv("GOOGLE_API_KEY")
-            google_cse_id = os.getenv("GOOGLE_CSE_ID")
+            tavily_search = TavilySearch(max_results=5)
+            search_response = tavily_search.invoke(query)
             
-            if not google_api_key or not google_cse_id:
-                print(f"Google search attempted for: {query}")
-                print("Note: Google Custom Search API not configured. Set GOOGLE_API_KEY and GOOGLE_CSE_ID environment variables.")
-                print("To set up Google Custom Search API:")
-                print("1. Go to https://console.cloud.google.com/")
-                print("2. Enable Custom Search API")
-                print("3. Create API key")
-                print("4. Go to https://cse.google.com/ to create Custom Search Engine")
-                print("5. Set environment variables: GOOGLE_API_KEY and GOOGLE_CSE_ID")
+            # Tavily returns a dictionary with 'results' key containing the actual search results
+            if not isinstance(search_response, dict) or 'results' not in search_response:
+                print(f"Unexpected Tavily response format: {type(search_response)}")
                 return []
             
-            # Google Custom Search API endpoint
-            search_url = "https://www.googleapis.com/customsearch/v1"
-            params = {
-                'key': google_api_key,
-                'cx': google_cse_id,
-                'q': query,
-                'num': 5,  # Number of results (max 10)
-                'dateRestrict': 'd7',  # Restrict to last 7 days
-                'sort': 'date'  # Sort by date
-            }
+            results = search_response['results']
+            formatted_results = []
             
-            response = requests.get(search_url, params=params, timeout=10)
+            for i, result in enumerate(results):
+                if isinstance(result, dict):
+                    # Extract structured data from Tavily result
+                    title = result.get('title', f"Search Result {i+1}")
+                    content = result.get('content', '')
+                    url = result.get('url', '')
+                    
+                    # Determine source from URL using urlparse
+                    try:
+                        parsed_url = urlparse(url)
+                        source = parsed_url.netloc.replace('www.', '')
+                    except:
+                        source = 'Unknown'
+                    
+                    # Create a meaningful description from content
+                    description = content[:200] + "..." if len(content) > 200 else content
+                    
+                    formatted_results.append({
+                        "title": title,
+                        "content": content,
+                        "source": source,
+                        "url": url if url and url.startswith('http') else "",
+                        "sentiment": self._analyze_news_sentiment(content)
+                    })
+                else:
+                    # Handle non-dict results
+                    result_str = str(result)
+                    
+                    formatted_results.append({
+                        "title": f"Search Result {i+1}",
+                        "content": result_str,
+                        "source": "Tavily Search",
+                        "url": "",
+                        "sentiment": self._analyze_news_sentiment(result_str)
+                    })
             
-            if response.status_code == 200:
-                data = response.json()
-                results = []
-                
-                # Extract search results
-                if 'items' in data:
-                    for item in data['items']:
-                        results.append({
-                            "title": item.get('title', 'No title'),
-                            "content": item.get('snippet', 'No content'),
-                            "source": item.get('displayLink', 'Unknown'),
-                            "url": item.get('link', ''),
-                            "sentiment": self._analyze_news_sentiment(item.get('snippet', '')),
-                            "date": datetime.now().isoformat()  # Google doesn't always provide exact dates
-                        })
-                
-                return results
-            else:
-                print(f"Google search failed with status code: {response.status_code}")
-                print(f"Response: {response.text}")
-                return []
-                
+            return formatted_results
         except Exception as e:
-            print(f"Google search error: {str(e)}")
+            # Fallback for Tavily search
+            print(f"Tavily search failed: {e}. No fallback implemented.")
             return []
     
-    def _calculate_sentiment_distribution(self, posts: List[Dict[str, Any]]) -> Dict[str, int]:
-        """Calculate sentiment distribution from posts."""
+    def _calculate_sentiment_distribution(self, items: List[Dict[str, Any]]) -> Dict[str, int]:
+        """Calculate sentiment distribution from a list of items (tweets or posts)."""
         sentiment_counts = {"positive": 0, "negative": 0, "neutral": 0}
         
-        for post in posts:
-            sentiment = post.get("sentiment", "neutral")
+        for item in items:
+            sentiment = item.get("sentiment", "neutral")
             sentiment_counts[sentiment] += 1
         
         return sentiment_counts
@@ -214,6 +270,8 @@ class SocialMediaAgent(BaseAgent):
         except Exception as e:
             return {"error": f"Error collecting Finnhub sentiment: {str(e)}"}
     
+
+    
     def _analyze_news_sentiment(self, text: str) -> str:
         """Analyze sentiment of news text."""
         if not text:
@@ -249,6 +307,7 @@ class SocialMediaAgent(BaseAgent):
         try:
             finnhub_sentiment = data.get("finnhub_sentiment", {})
             web_sentiment = data.get("web_sentiment", {})
+            twitter_sentiment = data.get("twitter_sentiment", {})
             
             # Count sentiments
             sentiment_counts = {"positive": 0, "negative": 0, "neutral": 0}
@@ -263,6 +322,12 @@ class SocialMediaAgent(BaseAgent):
             if "posts" in web_sentiment:
                 for post in web_sentiment["posts"]:
                     sentiment = post.get("sentiment", "neutral")
+                    sentiment_counts[sentiment] += 1
+            
+            # Count Twitter sentiment tweets
+            if "tweets" in twitter_sentiment:
+                for tweet in twitter_sentiment["tweets"]:
+                    sentiment = tweet.get("sentiment", "neutral")
                     sentiment_counts[sentiment] += 1
             
             total_posts = sum(sentiment_counts.values())
@@ -293,6 +358,9 @@ class SocialMediaAgent(BaseAgent):
                 "finnhub_sentiment": finnhub_sentiment.get("sentiment_distribution", {}),
                 "finnhub_percentages": finnhub_sentiment.get("sentiment_percentages", {}),
                 "web_sentiment": web_sentiment.get("sentiment_distribution", {}),
+                "web_percentages": web_sentiment.get("sentiment_percentages", {}),
+                "twitter_sentiment": twitter_sentiment.get("sentiment_distribution", {}),
+                "twitter_percentages": twitter_sentiment.get("sentiment_percentages", {}),
                 "note": web_sentiment.get("note", "No additional notes")
             }
             
@@ -326,6 +394,7 @@ class SocialMediaAgent(BaseAgent):
         ticker = data.get("ticker", "N/A")
         finnhub_sentiment = data.get("finnhub_sentiment", {})
         web_sentiment = data.get("web_sentiment", {})
+        twitter_sentiment = data.get("twitter_sentiment", {})
         sentiment_summary = data.get("sentiment_summary", {})
         
         # Format Finnhub sentiment data
@@ -340,6 +409,12 @@ class SocialMediaAgent(BaseAgent):
         for i, post in enumerate(web_posts[:5], 1):  # Limit to 5 posts
             web_text += f"{i}. {post.get('title', 'N/A')} - Sentiment: {post.get('sentiment', 'N/A')}\n"
         
+        # Format Twitter sentiment data
+        tweets = twitter_sentiment.get("tweets", [])
+        twitter_text = ""
+        for i, tweet in enumerate(tweets[:5], 1):  # Limit to 5 tweets
+            twitter_text += f"{i}. {tweet.get('text', 'N/A')} - Sentiment: {tweet.get('sentiment', 'N/A')}\n"
+
         # Format sentiment summary
         sentiment_counts = sentiment_summary.get("counts", {})
         sentiment_percentages = sentiment_summary.get("percentages", {})
@@ -347,6 +422,7 @@ class SocialMediaAgent(BaseAgent):
         finnhub_distribution = sentiment_summary.get("finnhub_sentiment", {})
         finnhub_percentages = sentiment_summary.get("finnhub_percentages", {})
         web_distribution = sentiment_summary.get("web_sentiment", {})
+        twitter_distribution = sentiment_summary.get("twitter_sentiment", {})
         
         prompt = f"""
 You are a social media sentiment analyst. Analyze the following social media data for {ticker} and provide insights about public sentiment and market perception.
@@ -358,6 +434,9 @@ Finnhub News Sentiment (Top 5) (Source: Finnhub API):
 
 Web Social Media Sentiment (Top 5) (Source: Google Custom Search):
 {web_text if web_text else "No web social media sentiment available"}
+
+Twitter Sentiment (Top 5) (Source: Twitter API):
+{twitter_text if twitter_text else "No Twitter sentiment available"}
 
 Overall Sentiment Analysis:
 - Positive: {sentiment_counts.get('positive', 0)} posts ({sentiment_percentages.get('positive', 0):.1f}%)
@@ -374,6 +453,11 @@ Web Social Media Sentiment Breakdown (Source: Google Custom Search):
 - Positive: {web_distribution.get('positive', 0)} posts
 - Negative: {web_distribution.get('negative', 0)} posts
 - Neutral: {web_distribution.get('neutral', 0)} posts
+
+Twitter Sentiment Breakdown (Source: Twitter API):
+- Positive: {twitter_distribution.get('positive', 0)} tweets
+- Negative: {twitter_distribution.get('negative', 0)} tweets
+- Neutral: {twitter_distribution.get('neutral', 0)} tweets
 
 Please provide a detailed analysis covering:
 1. Overall social media sentiment and its implications

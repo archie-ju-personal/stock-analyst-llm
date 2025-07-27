@@ -9,6 +9,11 @@ from datetime import datetime, timedelta
 import os
 import finnhub
 from .base_agent import BaseAgent
+import requests
+from bs4 import BeautifulSoup
+from langchain_tavily import TavilySearch
+import pytz
+from urllib.parse import urlparse
 
 class NewsAgent(BaseAgent):
     """Agent responsible for collecting and analyzing news data."""
@@ -88,61 +93,61 @@ class NewsAgent(BaseAgent):
             return {"error": f"Error collecting web news: {str(e)}"}
     
     def _perform_web_search(self, query: str) -> List[Dict[str, Any]]:
-        """Perform a web search and return results."""
+        """Perform a web search using Tavily and return results."""
         try:
-            # Google Custom Search API implementation
-            google_api_key = os.getenv("GOOGLE_API_KEY")
-            google_cse_id = os.getenv("GOOGLE_CSE_ID")
+            tavily_search = TavilySearch(max_results=5)
+            search_response = tavily_search.invoke(query)
             
-            if not google_api_key or not google_cse_id:
-                print(f"Google search attempted for: {query}")
-                print("Note: Google Custom Search API not configured. Set GOOGLE_API_KEY and GOOGLE_CSE_ID environment variables.")
-                print("To set up Google Custom Search API:")
-                print("1. Go to https://console.cloud.google.com/")
-                print("2. Enable Custom Search API")
-                print("3. Create API key")
-                print("4. Go to https://cse.google.com/ to create Custom Search Engine")
-                print("5. Set environment variables: GOOGLE_API_KEY and GOOGLE_CSE_ID")
+            # Tavily returns a dictionary with 'results' key containing the actual search results
+            if not isinstance(search_response, dict) or 'results' not in search_response:
+                print(f"Unexpected Tavily response format: {type(search_response)}")
                 return []
             
-            # Google Custom Search API endpoint
-            search_url = "https://www.googleapis.com/customsearch/v1"
-            params = {
-                'key': google_api_key,
-                'cx': google_cse_id,
-                'q': query,
-                'num': 5,  # Number of results (max 10)
-                'dateRestrict': 'd7',  # Restrict to last 7 days
-                'sort': 'date'  # Sort by date
-            }
+            results = search_response['results']
+            formatted_results = []
             
-            response = requests.get(search_url, params=params, timeout=10)
+            for i, result in enumerate(results):
+                if isinstance(result, dict):
+                    # Extract structured data from Tavily result
+                    title = result.get('title', f"Search Result {i+1}")
+                    content = result.get('content', '')
+                    url = result.get('url', '')
+                    
+                    # Determine source from URL using urlparse
+                    try:
+                        parsed_url = urlparse(url)
+                        source = parsed_url.netloc.replace('www.', '')
+                    except:
+                        source = 'Unknown'
+                    
+                    # Create a meaningful description from content
+                    description = content[:200] + "..." if len(content) > 200 else content
+                    
+                    formatted_results.append({
+                        "title": title,
+                        "description": description,
+                        "source": source,
+                        "url": url if url and url.startswith('http') else "",
+                        "sentiment": self._analyze_sentiment(content),
+                        "relevance_score": result.get('score', 0.8)
+                    })
+                else:
+                    # Handle non-dict results
+                    result_str = str(result)
+                    
+                    formatted_results.append({
+                        "title": f"Search Result {i+1}",
+                        "description": result_str[:200] + "..." if len(result_str) > 200 else result_str,
+                        "source": "Tavily Search",
+                        "url": "",
+                        "sentiment": self._analyze_sentiment(result_str),
+                        "relevance_score": 0.8
+                    })
             
-            if response.status_code == 200:
-                data = response.json()
-                results = []
-                
-                # Extract search results
-                if 'items' in data:
-                    for item in data['items']:
-                        results.append({
-                            "title": item.get('title', 'No title'),
-                            "description": item.get('snippet', 'No description'),
-                            "source": item.get('displayLink', 'Unknown'),
-                            "url": item.get('link', ''),
-                            "published_at": datetime.now().isoformat(),  # Google doesn't always provide exact dates
-                            "sentiment": self._analyze_sentiment(item.get('snippet', '')),
-                            "relevance_score": 0.8
-                        })
-                
-                return results
-            else:
-                print(f"Google search failed with status code: {response.status_code}")
-                print(f"Response: {response.text}")
-                return []
-                
+            return formatted_results
         except Exception as e:
-            print(f"Google search error: {str(e)}")
+            # Fallback for Tavily search
+            print(f"Tavily search failed: {e}. No fallback implemented.")
             return []
     
     def _collect_finnhub_news(self, ticker: str) -> Dict[str, Any]:
@@ -191,6 +196,8 @@ class NewsAgent(BaseAgent):
                 
         except Exception as e:
             return {"error": f"Error collecting Finnhub news: {str(e)}"}
+    
+
     
     def _analyze_sentiment(self, text: str) -> str:
         """Simple sentiment analysis based on keywords."""

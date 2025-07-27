@@ -1,6 +1,6 @@
 # Raw News Data for ASML
 
-**Collection Date:** 2025-07-26T16:57:40.692261
+**Collection Date:** 2025-07-26T17:34:38.657620
 
 ## Data Sources: Finnhub API, Google Custom Search
 
@@ -114,116 +114,116 @@
   "web_news": {
     "articles": [
       {
-        "title": "ASML News Today | Why did ASML stock go down today?",
-        "description": "21 hours ago ... ASML Holding N.V. (NASDAQ:ASML) Shares Bought by Greenwood Gearhart Inc. July 22, 2025 | marketbeat.com https://www.marketbeat\u00a0...",
-        "source": "www.marketbeat.com",
-        "url": "https://www.marketbeat.com/stocks/NASDAQ/ASML/news/",
-        "published_at": "2025-07-26T16:55:40.579021",
+        "title": "ASML Holding N.V. (NASDAQ:ASML) Holdings Cut by Phoenix ...",
+        "description": "research note on Wednesday. Finally, Susquehanna lowered their price objective on shares of ASML from $1,100.00 to $965.00 and set a \"positive\" rating on the stock in a research note on Thursday, April 17th. Seven analysts have rated the stock with a hold rating, six have assigned a buy rating and one has given a strong buy rating to the company's stock. According to MarketBeat.com, the company currently has an average rating of \"Moderate Buy\" and an average target price of $923.80. [...] research note on Wednesday. Finally, Susquehanna lowered their price objective on shares of ASML from $1,100.00 to $965.00 and set a \"positive\" rating on the stock in a research note on Thursday, April 17th. Seven analysts have rated the stock with a hold rating, six have assigned a buy rating and one has given a strong buy rating to the company's stock. According to MarketBeat.com, the company currently has an average rating of \"Moderate Buy\" and an average target price of $923.80. [...] research note on Wednesday. Finally, Susquehanna lowered their price objective on shares of ASML from $1,100.00 to $965.00 and set a \"positive\" rating on the stock in a research note on Thursday, April 17th. Seven analysts have rated the stock with a hold rating, six have assigned a buy rating and one has given a strong buy rating to the company's stock. According to MarketBeat.com, the company currently has an average rating of \"Moderate Buy\" and an average target price of $923.80.",
+        "source": "Unknown",
+        "url": "https://www.marketbeat.com/instant-alerts/filing-asml-holding-nv-nasdaqasml-holdings-cut-by-phoenix-financial-ltd-2025-07-26/",
+        "published_at": "2025-07-26T17:32:47.399724",
         "sentiment": "positive",
-        "relevance_score": "0.8"
+        "relevance_score": "0.78944516"
       },
       {
-        "title": "Should You Buy ASML Stock on the Dip?",
-        "description": "21 hours ago ... Both ASML and Alphabet look cheaper than Tesla at today's prices. These 10 stocks could mint the next wave of millionaires \u203a. Tesla is at a crossroads. Its\u00a0...",
-        "source": "www.aol.com",
-        "url": "https://www.aol.com/finance/buy-asml-stock-dip-163618028.html",
-        "published_at": "2025-07-26T16:55:40.579059",
-        "sentiment": "neutral",
-        "relevance_score": "0.8"
-      },
-      {
-        "title": "Euro Area Stock Market Index (EU50) - Quote - Chart - News",
-        "description": "21 hours ago ... Also, ASML and Nokia dropped around 1.5% each, with the latter continuing to ... Current job openings: Web Developer | Data Analyst | Sales. Apply Now.",
-        "source": "tradingeconomics.com",
-        "url": "https://tradingeconomics.com/euro-area/stock-market",
-        "published_at": "2025-07-26T16:55:40.579073",
-        "sentiment": "negative",
-        "relevance_score": "0.8"
-      },
-      {
-        "title": "Drive Wealth Management LLC Sells 357 Shares of ASML Holding ...",
-        "description": "12 hours ago ... ASML reported earnings of $4.55 per share in its latest quarter, missing analysts' expectations, but the company's revenue increased by 23.2% year-over-year.",
-        "source": "www.marketbeat.com",
-        "url": "https://www.marketbeat.com/instant-alerts/filing-drive-wealth-management-llc-sells-357-shares-of-asml-holding-nv-nasdaqasml-2025-07-26/",
-        "published_at": "2025-07-26T16:55:40.962135",
-        "sentiment": "neutral",
-        "relevance_score": "0.8"
-      },
-      {
-        "title": "Should You Buy ASML Stock on the Dip?",
-        "description": "21 hours ago ... Compared to a market cap of $280 billion today, this earnings potential means that ASML stock is cheap after its latest drawdown and deserves consideration in\u00a0...",
-        "source": "www.aol.com",
-        "url": "https://www.aol.com/finance/buy-asml-stock-dip-163618028.html",
-        "published_at": "2025-07-26T16:55:40.962170",
-        "sentiment": "negative",
-        "relevance_score": "0.8"
+        "title": "ASML.AS Technical Analysis July 26, 2025 | RSI, SMA & MACD ...",
+        "description": "Current Market Position of ASML.AS  \nAs of the close on July 26, 2025, ASML.AS\u2019s stock price stood at 603.9000244140625. This figure represents a critical point of analysis as it reflects not only the intrinsic value perceived by investors but also the external economic factors influencing this valuation. [...] ASML Holding NV, trading under the ticker ASML.AS, is a pivotal player in the semiconductor industry, known for its advanced photolithography systems which are essential for microchip production. This technical analysis, dated July 26, 2025, aims to provide an in-depth look at ASML.AS\u2019s stock performance, focusing on key indicators such as the Relative Strength Index (RSI), Simple Moving Average (SMA), and Moving Average Convergence Divergence (MACD). We will also delve into ASML.AS price [...] For those considering investing in ASML.AS, it may be wise to wait for more definitive signs of a trend reversal or to consider a long-term investment approach, given the company\u2019s strong position in a critical and growing industry.\n\n### Latest stories\n\n### Buy or Sell? ^VIX Technical Analysis July 26, 2025 | RSI, SMA & MACD Outlook\n\n### Buy or Sell? ^STOXX50E Technical Analysis July 26, 2025 | RSI, SMA & MACD Outlook",
+        "source": "Unknown",
+        "url": "https://lissadiurnum.com/2025/07/26/asml-as-technical-analysis-july-26-2025-rsi-sma-macd-outlook/",
+        "published_at": "2025-07-26T17:32:47.399786",
+        "sentiment": "positive",
+        "relevance_score": "0.7646988"
       },
       {
         "title": "ASML Holding N.V. (NASDAQ:ASML) Shares Purchased by ...",
-        "description": "11 hours ago ... Assetmark Inc. \u00b7 ASML's latest quarterly earnings reported $4.55 EPS, missing estimates, but showing a 23.2% year-over-year revenue growth. \u00b7 The company\u00a0...",
-        "source": "www.marketbeat.com",
+        "description": "& Company raised their target price on ASML from $840.00 to $890.00 and gave the company an \"overweight\" rating in a research report on Tuesday, July 8th. Seven research analysts have rated the stock with a hold rating, six have given a buy rating and one has issued a strong buy rating to the company's stock. According to MarketBeat, ASML currently has an average rating of \"Moderate Buy\" and a consensus price target of $923.80. [...] & Company raised their target price on ASML from $840.00 to $890.00 and gave the company an \"overweight\" rating in a research report on Tuesday, July 8th. Seven research analysts have rated the stock with a hold rating, six have given a buy rating and one has issued a strong buy rating to the company's stock. According to MarketBeat, ASML currently has an average rating of \"Moderate Buy\" and a consensus price target of $923.80. [...] & Company raised their target price on ASML from $840.00 to $890.00 and gave the company an \"overweight\" rating in a research report on Tuesday, July 8th. Seven research analysts have rated the stock with a hold rating, six have given a buy rating and one has issued a strong buy rating to the company's stock. According to MarketBeat, ASML currently has an average rating of \"Moderate Buy\" and a consensus price target of $923.80.",
+        "source": "Unknown",
         "url": "https://www.marketbeat.com/instant-alerts/filing-asml-holding-nv-nasdaqasml-shares-purchased-by-assetmark-inc-2025-07-26/",
-        "published_at": "2025-07-26T16:55:40.962186",
+        "published_at": "2025-07-26T17:32:47.399838",
+        "sentiment": "positive",
+        "relevance_score": "0.7163977"
+      },
+      {
+        "title": "ASML Holding (ASML) Earnings Dates, Call Summary & Reports",
+        "description": "## ASML Earnings-Related Price Changes\n\n| Report Date | Price 1 Day Before | Price 1 Day After | Percentage Change |\n| --- | --- | --- | --- |\n| Jul 16, 2025 | $823.02 | $754.45 | -8.33% |\n| Apr 16, 2025 | $681.51 | $633.40 | -7.06% |\n| Jan 29, 2025 | $680.48 | $709.66 | +4.29% |\n| Oct 15, 2024 | $866.90 | $725.93 | -16.26% |\n\n## FAQ\n\n## ASML Holding (ASML) Earnings News [...] | Report Date | Fiscal Quarter | Forecast / EPS | Last Year's EPS | EPS YoY Change | Press Release | Slides | Play Transcript |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| Oct 15, 2025 | 2025 (Q3) | 6.44 / - | 5.757 | \u00e2\u0080\u0095 |  | \u00e2\u0080\u0095 | \u00e2\u0080\u0095 |\n| Jul 16, 2025 | 2025 (Q2) | 6.10 / 6.84 | 4.384 | 56.07% (+2.46) |  |  |  |\n| Apr 16, 2025 | 2025 (Q1) | 6.16 / 6.83 | 3.308 | 106.47% (+3.52) |  |  |  |\n| Jan 29, 2025 | 2024 (Q4) | 7.04 / 7.14 | 5.68 | 25.67% (+1.46) |  |  |  | [...] | Oct 15, 2024 | 2024 (Q3) | 5.35 / 5.76 | 5.069 | 13.57% (+0.69) |  |  |  |\n| Jul 17, 2024 | 2024 (Q2) | 4.03 / 4.38 | 5.517 | -20.54% (-1.13) |  |  |  |\n| Apr 17, 2024 | 2024 (Q1) | 3.15 / 3.31 | 5.435 | -39.14% (-2.13) |  |  |  |\n| Jan 24, 2024 | 2023 (Q4) | 5.17 / 5.68 | 5.015 | 13.26% (+0.67) |  |  |  |\n| Oct 18, 2023 | 2023 (Q3) | 4.92 / 5.07 | 4.2 | 20.69% (+0.87) |  |  |  |\n| Jul 19, 2023 | 2023 (Q2) | 5.12 / 5.52 | 3.615 | 52.61% (+1.90) |  |  |  |",
+        "source": "Unknown",
+        "url": "https://www.tipranks.com/stocks/asml/earnings",
+        "published_at": "2025-07-26T17:32:51.037000",
         "sentiment": "neutral",
-        "relevance_score": "0.8"
+        "relevance_score": "0.87782305"
       },
       {
-        "title": "FourThought Financial Partners LLC Increases Position in ASML ...",
-        "description": "10 hours ago ... Putney Financial Group LLC now owns 38 shares of the semiconductor company's stock worth $25,000 after purchasing an additional 29 shares in the last quarter.",
-        "source": "www.marketbeat.com",
-        "url": "https://www.marketbeat.com/instant-alerts/filing-fourthought-financial-partners-llc-increases-position-in-asml-holding-nv-nasdaqasml-2025-07-26/",
-        "published_at": "2025-07-26T16:55:41.398724",
+        "title": "Down 18%, Should You Buy the Dip on ASML Holding?",
+        "description": "Person looking at a computer screen with folded hands.\n\n## ASML's cloudy 2026 guidance is weighing on the stock\n\nASML's latest quarterly numbers ticked all the right boxes. The company reported a 24% increase in revenue from the year-ago period, while its earnings shot up by 47%. Its numbers were well ahead of consensus expectations. The Dutch company received new orders worth 5.5 billion euros during the quarter, well ahead of the Wall Street estimate of 4.8 billion euros. [...] However, the stock's performance has been quite disappointing in the past year. ASML stock has lost 18% of its value during this period. The company's latest results for the second quarter of 2025 added to investors' misery. ASML stock fell more than 8% following release of the company's Q2 report on July 16.\n\nLet's see why that was the case and find out if this semiconductor stock's poor performance in the past year is an opportunity for savvy investors to buy a potential long-term winner. [...] It is trading at 26 times earnings right now, which is a discount to the  average earnings multiple of 51 for the U.S. technology sector. The company's growth has been solid of late, as its latest quarterly results tell us, and the prospects of the semiconductor equipment market could help it sustain that momentum in the long run as well.",
+        "source": "Unknown",
+        "url": "https://finance.yahoo.com/news/down-18-buy-dip-asml-133200782.html",
+        "published_at": "2025-07-26T17:32:51.037082",
         "sentiment": "positive",
-        "relevance_score": "0.8"
+        "relevance_score": "0.86981434"
       },
       {
-        "title": "\u82f1\u7279\u723e\u6676\u5713\u4ee3\u5de5\u524d\u666f\u582a\u6182\u53f0\u7a4d\u96fb\u559c\u3001ASML\u6182| \u9245\u4ea8\u7db2- \u7f8e\u80a1\u96f7\u9054",
-        "description": "18 hours ago ... ... ASML (ASML-US) \u5e36 ... \u6b64\u4e00\u767c\u5c55\u96d6\u5c0d\u7af6\u722d\u5c0d\u624b\u53f0\u7a4d\u96fb(TSM-US) \u6709\u5229\uff0c\u537b\u53ef\u80fd\u70ba\u6676\u7247\u8a2d\u5099\u5927\u5ee0 ASML (ASML-US) \u5e36\u4f86\u58d3\u529b\u3002 cover image of news\u00a0...",
-        "source": "news.cnyes.com",
-        "url": "https://news.cnyes.com/news/id/6077645",
-        "published_at": "2025-07-26T16:55:41.398750",
+        "title": "ASML reports \u20ac7.7 billion total net sales and \u20ac2.3 billion net income ...",
+        "description": "Saved jobs\n\nBack\n\n# ASML reports \u20ac7.7 billion total net sales and \u20ac2.3 billion net income in Q2 2025\n\nFull-year 2025 expected total net sales growth of around 15% with gross margin around 52%\n\nPress release - Veldhoven, The Netherlands, July 16, 2025\n\nToday, ASML Holding NV (ASML) has published its 2025 second-quarter results. [...] An investor call for both investors and the media will be hosted by CEO Christophe Fouquet and CFO Roger Dassen  on July 16, 2025 at 15:00 Central European Time / 09:00 US Eastern Time. Details can be found on our website.\n\nAbout ASML [...] The Consolidated Balance Sheets of ASML Holding N.V. as of June 29, 2025, the related Consolidated Statements of Operations and Consolidated Statements of Cash Flows for the quarter and six-month period ended June 29, 2025, as presented in this press release, are unaudited.\n\nToday, July 16, 2025, ASML also published its Statutory Interim Report for the six-month period ended June 29, 2025. The Statutory Interim Report is available on our website.\n\nRegulated information",
+        "source": "Unknown",
+        "url": "https://www.asml.com/en/news/press-releases/2025/q2-2025-financial-results",
+        "published_at": "2025-07-26T17:32:51.037127",
+        "sentiment": "positive",
+        "relevance_score": "0.78493005"
+      },
+      {
+        "title": "News | ASML - Supplying the semiconductor industry",
+        "description": "April 16, 2025 ASML reports \u20ac7.7 billion total net sales and \u20ac2.4 billion net income in Q1 2025\n\nMarch 11, 2025 ASML and imec sign strategic partnership agreement to support semiconductor research and sustainable innovation in Europe\n\n1.   Home\n2.   News\n\nLearn\n   ASML at a glance\n   History\n   Products\n   Technology\n   Sustainability\n   News\n\nWork At ASML\n   Job search\n   Careers\n   Organization\n   Locations [...] Press releases & announcements Read our latest news and announcements, hot off the press.Stories Let our people and technology inspire you, and read about what we\u2019re doing in our communities.Media library Download photos of our technology, locations, and more.Media contacts See an overview of our global and regional media relations contacts.\n\nSign up for news alerts\n\nLatest Press Releases\n\nApril 23, 2025 ASML discloses 2025 AGM results [...] Products\n       Products overview\n       EUV lithography\n       DUV lithography\n       Refurbished systems\n       Metrology & inspection\n       Computational lithography\n       Customer support\n\n   News\n       News overview\n       Press releases & announcements\n       Stories\n       Share buyback\n       Media library\n       Contact Media Relations\n       News alerts",
+        "source": "Unknown",
+        "url": "https://www.asml.com/news",
+        "published_at": "2025-07-26T17:32:53.392542",
         "sentiment": "neutral",
-        "relevance_score": "0.8"
+        "relevance_score": "0.84948516"
       },
       {
-        "title": "ASML News Today | Why did ASML stock go down today?",
-        "description": "21 hours ago ... ASML Holding N.V. (NASDAQ:ASML) Position Boosted by DE Burlo Group Inc. July 26 at 6:21 AM | marketbeat.com https://www.marketbeat.com/instant-alerts/\u00a0...",
-        "source": "www.marketbeat.com",
-        "url": "https://www.marketbeat.com/stocks/NASDAQ/ASML/news/",
-        "published_at": "2025-07-26T16:55:41.400156",
+        "title": "Press releases | ASML - Supplying the semiconductor industry",
+        "description": "1\n   2\n   3\n   4\n   5\n   ...\n   19\n   \n\nSee share buyback press releases\n\nSign up for news alerts\n\nLatest Press Releases\n\nApril 23, 2025 ASML discloses 2025 AGM results\n\nApril 16, 2025 ASML reports \u20ac7.7 billion total net sales and \u20ac2.4 billion net income in Q1 2025\n\nMarch 11, 2025 ASML and imec sign strategic partnership agreement to support semiconductor research and sustainable innovation in Europe\n\n1.   Home\n2.   News\n3.   Press releases & announcements [...] April 23, 2025 ASML discloses 2025 AGM results\n   April 16, 2025 ASML reports \u20ac7.7 billion total net sales and \u20ac2.4 billion net income in Q1 2025 2025 total net sales expected to be between \u20ac30 billion and \u20ac35 billion\n   March 11, 2025 ASML and imec sign strategic partnership agreement to support semiconductor research and sustainable innovation in Europe\n   March 5, 2025 ASML publishes agenda Annual General Meeting 2025 Nomination Karien van Gennip as new member of the Supervisory Board [...] April 17, 2024 ASML reports \u20ac5.3 billion total net sales and \u20ac1.2 billion net income in Q1 2024 2024 outlook unchanged\n   March 11, 2024 ASML publishes agenda Annual General Meeting 2024\n   February 29, 2024 ASML\u2019s affordable housing program kicks off with announcement of two Brainport region projects ASML announces two initiatives to create hundreds of affordable homes in Brainport Eindhoven region",
+        "source": "Unknown",
+        "url": "https://www.asml.com/news/press-releases",
+        "published_at": "2025-07-26T17:32:53.392624",
         "sentiment": "positive",
-        "relevance_score": "0.8"
+        "relevance_score": "0.84918517"
       },
       {
-        "title": "Rep. Josh Gottheimer Buys ASML Holding N.V. (NASDAQ:ASML ...",
-        "description": "14 hours ago ... Several institutional investors and hedge funds have recently added to or reduced their stakes in the stock. Putney Financial Group LLC grew its position in\u00a0...",
-        "source": "www.marketbeat.com",
-        "url": "https://www.marketbeat.com/instant-alerts/rep-josh-gottheimer-buys-asml-holding-nv-nasdaqasml-shares-2025-07-22/",
-        "published_at": "2025-07-26T16:55:41.909155",
+        "title": "ASML | The world's supplier to the semiconductor industry",
+        "description": "Search for your future job\n\nLatest Press Releases\n\nApril 23, 2025 ASML discloses 2025 AGM results\n\nApril 16, 2025 ASML reports \u20ac7.7 billion total net sales and \u20ac2.4 billion net income in Q1 2025\n\nMarch 11, 2025 ASML and imec sign strategic partnership agreement to support semiconductor research and sustainable innovation in Europe\n\nLearn\n   ASML at a glance\n   History\n   Products\n   Technology\n   Sustainability\n   News\n\nWork At ASML\n   Job search\n   Careers\n   Organization\n   Locations [...] Products\n       Products overview\n       EUV lithography\n       DUV lithography\n       Refurbished systems\n       Metrology & inspection\n       Computational lithography\n       Customer support\n\n   News\n       News overview\n       Press releases & announcements\n       Stories\n       Share buyback\n       Media library\n       Contact Media Relations\n       News alerts",
+        "source": "Unknown",
+        "url": "https://www.asml.com/",
+        "published_at": "2025-07-26T17:32:53.392678",
         "sentiment": "positive",
-        "relevance_score": "0.8"
+        "relevance_score": "0.8479807"
+      },
+      {
+        "title": "ASML Holding (ASML) Earnings Dates, Call Summary & Reports",
+        "description": "During ASML's 2025 first quarter financial results conference call, the company provided detailed guidance and insights into its financial performance and future outlook. ASML reported total net sales of EUR7.7 billion, with net system sales accounting for EUR5.7 billion, including EUR3.2 billion from EUV sales. The gross margin exceeded expectations at 54%, attributed to favorable EUV product mix and customer productivity milestones. Operating expenses aligned with guidance, with R&D at [...] HighlightsLowlights\n\nStrong First Quarter Financial Performance\n\nASML reported total net sales of EUR7.7 billion in Q1 2025, in line with guidance. Net system sales were EUR5.7 billion, driven by EUR3.2 billion from EUV sales and EUR2.5 billion from non-EUV sales. Gross margin was above guidance at 54%.\n\nEUV Technology Milestones [...] Earnings Call Summary\n---------------------\n\nEarnings Call Date:Apr 16, 2025\n\n|\n\n% Change Since: \\-2.17%\n\n|\n\nNext Earnings Date:Jul 16, 2025\n\nEarnings Call Sentiment|Neutral\n\nASML reported strong financial results for Q1 2025, with positive developments in EUV technology and a positive outlook driven by AI demand. However, the company faces challenges from negative free cash flow, tariff uncertainties, and order book volatility, creating a balanced sentiment overall.\n\nCompany Guidance",
+        "source": "Unknown",
+        "url": "https://www.tipranks.com/stocks/asml/earnings",
+        "published_at": "2025-07-26T17:32:55.337639",
+        "sentiment": "positive",
+        "relevance_score": "0.9231018"
       }
     ],
     "total_articles": "12",
     "source": "Web Search",
     "sentiment_distribution": {
-      "positive": "4",
-      "negative": "3",
-      "neutral": "5"
+      "positive": "9",
+      "negative": "0",
+      "neutral": "3"
     },
     "note": "Data collected from public web search. Limited to recent, publicly available information."
   },
   "news_summary": {
     "total_articles": "20",
     "sentiment_counts": {
-      "positive": "9",
-      "negative": "2",
-      "neutral": "9"
+      "positive": "13",
+      "negative": "0",
+      "neutral": "7"
     },
     "sentiment_percentages": {
-      "positive": "45.0",
-      "negative": "10.0",
-      "neutral": "45.0"
+      "positive": "65.0",
+      "negative": "0.0",
+      "neutral": "35.0"
     },
     "overall_sentiment": "positive",
     "finnhub_sentiment_distribution": {
@@ -232,9 +232,9 @@
       "neutral": "5"
     },
     "web_sentiment_distribution": {
-      "positive": "4",
-      "negative": "3",
-      "neutral": "5"
+      "positive": "9",
+      "negative": "0",
+      "neutral": "3"
     },
     "note": "Data collected from public web search. Limited to recent, publicly available information."
   }

@@ -1,6 +1,6 @@
 # Raw Social Media Data for ASML
 
-**Collection Date:** 2025-07-26T16:57:40.692261
+**Collection Date:** 2025-07-26T17:34:38.657620
 
 ## Data Sources: Finnhub API, Google Custom Search
 
@@ -976,89 +976,89 @@
   "web_sentiment": {
     "posts": [
       {
-        "title": "NewsHub Daily",
-        "content": "21 hours ago ... Most Discussed. Adult Education Teacher Compensation: A Deep Dive into Challenges, Trends, and Pathways to Equity 2025-07-26 23:58; Adult Education in Los\u00a0...",
-        "source": "studentmobilelist.com",
-        "url": "https://studentmobilelist.com/",
+        "title": "Investment Idea #1: Long ASML Today at $720 : r/ValueInvesting",
+        "content": "I see a lot of wild posts on a lot of Reddit \u201cinvesting threads\u201d with people buying 1,000 0 DTE PLTR options and posting their massive gains/",
+        "source": "Unknown",
+        "url": "https://www.reddit.com/r/ValueInvesting/comments/1m65ovr/investment_idea_1_long_asml_today_at_720/",
+        "sentiment": "positive",
+        "date": "2025-07-26T17:32:45.849328"
+      },
+      {
+        "title": "What is your current sentiment and opinion about ASML? - Reddit",
+        "content": "ASML is a fascinating company but last few quarters have been disappointing. Stock down 22% over the last year going into today and is about",
+        "source": "Unknown",
+        "url": "https://www.reddit.com/r/stocks/comments/1m16t75/what_is_your_current_sentiment_and_opinion_about/",
         "sentiment": "negative",
-        "date": "2025-07-26T16:55:18.562573"
+        "date": "2025-07-26T17:32:45.849363"
       },
       {
-        "title": "SCATTACOLTREND | Facebook",
-        "content": "21 hours ago ... Members discuss specific stocks, such as Nvidia and Renault, and market indices, like S&P500. They also analyze gold prices and trading ranges. The group aims\u00a0...",
-        "source": "www.facebook.com",
-        "url": "https://www.facebook.com/groups/scattacoltrend/",
+        "title": "ASML (ASML) Stock Price, News & Analysis - MarketBeat",
+        "content": "#### News Sentiment\n\nASML has a news sentiment score of 1.23. This score is calculated as an average of sentiment of articles about the company over the last seven days and ranges from 2 (good news) to -2 (bad news). This is a higher news sentiment than the 0.82 average news sentiment score of Computer and Technology companies.\n   #### News Coverage This Week\n\nMarketBeat has tracked 40 news articles for ASML this week, compared to 43 articles on an average week.\n   #### Search Interest [...] 0.74% of the float of ASML has been sold short.\n   #### Short Interest Ratio / Days to Cover\n\nASML has a short interest ratio (\"days to cover\") of 1.7, which is generally considered an acceptable ratio of short interest to trading volume.\n   #### Change versus previous month\n\nShort interest in ASML has recently increased by 18.85%, indicating that investor sentiment is decreasing significantly.\n\nNews and Social Media 2.9 / 5 News Sentiment 1.23Image 23: mentions of ASML in the last 14 days [...] Short interest in ASML has recently increased by 18.85%, indicating that investor sentiment is decreasing significantly.\n\nDividend 1.7 / 5 Dividend Strength Weak\n\n   #### Dividend Yield\n\nASML has a dividend yield of 0.96%, which is in the bottom 25% of all stocks that pay dividends.\n\n   #### Dividend Growth\n\nASML does not have a long track record of dividend growth.\n\n   #### Dividend Coverage",
+        "source": "Unknown",
+        "url": "https://www.marketbeat.com/stocks/NASDAQ/ASML/",
         "sentiment": "positive",
-        "date": "2025-07-26T16:55:18.562613"
+        "date": "2025-07-26T17:32:50.002873"
       },
       {
-        "title": "Joe Mazzola (@JoeMazzolaCS) / X",
-        "content": "21 hours ago ... ... ASML. Check out the report below. Not a recommendation. @SchwabTrading ... Equity investing sentiment improving, as June marks an increase in\u00a0...",
-        "source": "x.com",
-        "url": "https://x.com/joemazzolacs?lang=en",
-        "sentiment": "positive",
-        "date": "2025-07-26T16:55:18.974738"
-      },
-      {
-        "title": "FourThought Financial Partners LLC Increases Position in ASML ...",
-        "content": "10 hours ago ... Based on data from MarketBeat, ASML presently has an average rating of ... Twitter \u00b7 Facebook \u00b7 YouTube \u00b7 LinkedIn. About MarketBeat. About \u00b7 Editorial\u00a0...",
-        "source": "www.marketbeat.com",
-        "url": "https://www.marketbeat.com/instant-alerts/filing-fourthought-financial-partners-llc-increases-position-in-asml-holding-nv-nasdaqasml-2025-07-26/",
-        "sentiment": "positive",
-        "date": "2025-07-26T16:55:18.974779"
-      },
-      {
-        "title": "Onrust en boosheid: duizenden festivalgangers zetten tickets ...",
-        "content": "14 hours ago ... Helaas kunnen wij deze social post, liveblog of anders niet tonen omdat het \u00e9\u00e9n of meerdere social media-elementen bevat. ... Buzz vergelijkbaar met Lowlands.",
-        "source": "www.ed.nl",
-        "url": "https://www.ed.nl/show/onrust-en-boosheid-duizenden-festivalgangers-zetten-tickets-milkshake-voor-spotprijzen-te-koop~a07e01e7/",
+        "title": "ASML (ASML) Twitter Mentions Statistics 2025 - AltIndex",
+        "content": "ASML underperforms its industry peers when it comes to Twitter Mentions, ranking in the 4th percentile. Why is it important to track Twitter mentions for ASML?",
+        "source": "Unknown",
+        "url": "https://altindex.com/ticker/asml/twitter-mentions",
         "sentiment": "neutral",
-        "date": "2025-07-26T16:55:19.382514"
+        "date": "2025-07-26T17:32:50.002913"
       },
       {
-        "title": "Markets Insider: Stock Market News, Realtime Quotes and Charts",
-        "content": "21 hours ago ... A stock market site by Business Insider with real-time data, custom charts and breaking news. Get the latest on stocks, commodities, currencies, funds,\u00a0...",
-        "source": "markets.businessinsider.com",
-        "url": "https://markets.businessinsider.com/",
+        "title": "ASML at a glance | Supplying the semiconductor industry",
+        "content": "The face of a man wearing a cleanroom suit, mask and safety goggles looking into a machine.\nA wafer is exposed inside an ASML EUV lithography machine\nASML engineer is working in the cleanroom\n\n#### Social Media\n\nCopyright \u00a9 2019-2025 (ASML) All Rights Reserved",
+        "source": "Unknown",
+        "url": "https://www.asml.com/company/about-asml/asml-at-a-glance",
         "sentiment": "neutral",
-        "date": "2025-07-26T16:55:19.382538"
+        "date": "2025-07-26T17:32:52.061619"
       },
       {
-        "title": "Joe Mazzola (@JoeMazzolaCS) / X",
-        "content": "21 hours ago ... ... ASML. Check out the report below. Not a recommendation. @SchwabTrading ... Equity investing sentiment improving, as June marks an increase in\u00a0...",
-        "source": "x.com",
-        "url": "https://x.com/joemazzolacs?lang=en",
-        "sentiment": "positive",
-        "date": "2025-07-26T16:55:19.690053"
+        "title": "ASML: What You Need To Know About the Semiconductor Company",
+        "content": "Adam Mosseri, head of Instagram, speaks on stage in front of a bright pink screen displaying a phone with an Instagram Shopping order confirmation.\nAdam Mosseri, head of Instagram, speaks on stage in front of a bright pink screen displaying a phone with an Instagram Shopping order confirmation.:max_bytes(150000):strip_icc()/GettyImages-1140306256-b33cd37a3a43400e917a2b551db24bb7.jpg)\nLogo embellishes a granite wall near the entrance to the Comcast Building in New York. [...] Suzanne is a content marketer, writer, and fact-checker. She holds a Bachelor of Science in Finance degree from Bridgewater State University and helps develop content strategies.\n\nASML is a Dutch company based in Veldhoven, the Netherlands, that designs and builds systems and software used in the production of semiconductor chips. [...] Logo embellishes a granite wall near the entrance to the Comcast Building in New York.:max_bytes(150000):strip_icc()/GettyImages-867061116-0a1839b361a9406b9672e49331248795.jpg)\n Woman holding credit card\n Woman holding credit card:max_bytes(150000):strip_icc()/GettyImages-13181780681-2502efd7b00e410ca9e987334296eb92.jpg)\nTesla CEO Elon Musk talks to media as he arrives to visit the construction site of the future US electric car giant Tesla, on September 03, 2020 in Gruenheide near Berlin",
+        "source": "Unknown",
+        "url": "https://www.investopedia.com/asml-7971466",
+        "sentiment": "neutral",
+        "date": "2025-07-26T17:32:52.061712"
       },
       {
-        "title": "Rep. Josh Gottheimer Buys ASML Holding N.V. (NASDAQ:ASML ...",
-        "content": "14 hours ago ... High Media Sentiment Stocks \u00b7 Premium Reports \u00b7 Elon Musk's Next Move \u00b7 10 Stocks ... Josh Gottheimer Buys ASML Holding N.V. (NASDAQ:ASML) Stock. Written by\u00a0...",
-        "source": "www.marketbeat.com",
-        "url": "https://www.marketbeat.com/instant-alerts/rep-josh-gottheimer-buys-asml-holding-nv-nasdaqasml-shares-2025-07-22/",
+        "title": "ASML (ASML) Stock Price, News & Analysis - MarketBeat",
+        "content": "#### News Sentiment\n\nASML has a news sentiment score of 1.23. This score is calculated as an average of sentiment of articles about the company over the last seven days and ranges from 2 (good news) to -2 (bad news). This is a higher news sentiment than the 0.82 average news sentiment score of Computer and Technology companies.\n   #### News Coverage This Week\n\nMarketBeat has tracked 40 news articles for ASML this week, compared to 43 articles on an average week.\n   #### Search Interest [...] 0.74% of the float of ASML has been sold short.\n   #### Short Interest Ratio / Days to Cover\n\nASML has a short interest ratio (\"days to cover\") of 1.7, which is generally considered an acceptable ratio of short interest to trading volume.\n   #### Change versus previous month\n\nShort interest in ASML has recently increased by 18.85%, indicating that investor sentiment is decreasing significantly.\n\nNews and Social Media 2.9 / 5 News Sentiment 1.23Image 23: mentions of ASML in the last 14 days [...] Short interest in ASML has recently increased by 18.85%, indicating that investor sentiment is decreasing significantly.\n\nDividend 1.7 / 5 Dividend Strength Weak\n\n   #### Dividend Yield\n\nASML has a dividend yield of 0.96%, which is in the bottom 25% of all stocks that pay dividends.\n\n   #### Dividend Growth\n\nASML does not have a long track record of dividend growth.\n\n   #### Dividend Coverage",
+        "source": "Unknown",
+        "url": "https://www.marketbeat.com/stocks/NASDAQ/ASML/",
         "sentiment": "positive",
-        "date": "2025-07-26T16:55:19.690089"
+        "date": "2025-07-26T17:32:56.000157"
+      },
+      {
+        "title": "Down 18%, Should You Buy the Dip on ASML Holding?",
+        "content": "As such, there is a good chance that ASML stock could continue to remain under pressure in the near term on account of the negative sentiment created by its cautious outlook. However, if the stock continues to dip further, it may be a good idea to buy it from a long-term perspective.\n\nStory Continues\n\nThe company is confident of achieving its long-term targets\n----------------------------------------------------------- [...] However, the stock's performance has been quite disappointing in the past year. ASML stock has lost 18% of its value during this period. The company's latest results for the second quarter of 2025 added to investors' misery. ASML stock fell more than 8% following release of the company's Q2 report on July 16.\n\nLet's see why that was the case and find out if this semiconductor stock's poor performance in the past year is an opportunity for savvy investors to buy a potential long-term winner. [...] However, ASML's Q3 guidance of 7.4 billion euros to 7.9 billion euros in revenue was lower than analysts' expectations of 8.2 billion euros. Investors were also alarmed by the company's 2026 outlook. Though it is expecting a 15% increase in revenue this year, CEO Christophe Fouquet remarked that while the company is preparing \"for growth in 2026, we cannot confirm it at this stage.\"",
+        "source": "Unknown",
+        "url": "https://finance.yahoo.com/news/down-18-buy-dip-asml-133200782.html",
+        "sentiment": "neutral",
+        "date": "2025-07-26T17:32:56.000237"
       }
     ],
     "total_posts": "8",
     "source": "Web Search",
     "sentiment_distribution": {
-      "positive": "5",
+      "positive": "3",
       "negative": "1",
-      "neutral": "2"
+      "neutral": "4"
     },
     "note": "Data collected from public web search. Limited to recent, publicly available social media discussions."
   },
   "sentiment_summary": {
     "counts": {
-      "positive": "81",
+      "positive": "79",
       "negative": "16",
-      "neutral": "69"
+      "neutral": "71"
     },
     "percentages": {
-      "positive": "48.795180722891565",
+      "positive": "47.59036144578313",
       "negative": "9.63855421686747",
-      "neutral": "41.566265060240966"
+      "neutral": "42.77108433734939"
     },
     "overall_sentiment": "positive",
     "total_posts": "166",
@@ -1073,9 +1073,9 @@
       "neutral": "42.405063291139236"
     },
     "web_sentiment": {
-      "positive": "5",
+      "positive": "3",
       "negative": "1",
-      "neutral": "2"
+      "neutral": "4"
     },
     "note": "Data collected from public web search. Limited to recent, publicly available social media discussions."
   }

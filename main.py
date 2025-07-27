@@ -19,7 +19,7 @@ import numpy as np
 import datetime
 import decimal
 
-from stock_analyst import StockAnalyst
+from stock_analyst import LangGraphStockAnalyst
 
 load_dotenv()
 
@@ -301,7 +301,7 @@ def main():
     
     # Initialize the analyst
     try:
-        analyst = StockAnalyst(debug=debug_mode)
+        analyst = LangGraphStockAnalyst(debug=debug_mode)
         
         # Run the analysis
         console.print(f"\n[bold yellow]Starting analysis for {ticker}...[/bold yellow]")
@@ -330,8 +330,8 @@ def main():
                 # Save Markdown version
                 md_filename = save_markdown_report(report, ticker, filename_base)
                 console.print(f"[bold green]Markdown report saved to {md_filename}[/bold green]")
-        else:
-            console.print(f"[bold red]Analysis failed: {report['error']}[/bold red]")
+        elif report:
+            console.print(f"[bold red]Analysis failed: {report.get('error', 'Unknown error')}[/bold red]")
     
     except KeyboardInterrupt:
         console.print("\n[bold yellow]Analysis interrupted by user.[/bold yellow]")
