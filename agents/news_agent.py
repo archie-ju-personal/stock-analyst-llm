@@ -18,7 +18,7 @@ from urllib.parse import urlparse
 class NewsAgent(BaseAgent):
     """Agent responsible for collecting and analyzing news data."""
     
-    def __init__(self, model_name: str = "gpt-4", temperature: float = 0.1):
+    def __init__(self, model_name: str = "gpt-4o-mini", temperature: float = 0.1):
         super().__init__(model_name, temperature)
         self.news_api_key = os.getenv("NEWS_API_KEY")
         # Initialize Finnhub client
@@ -200,26 +200,42 @@ class NewsAgent(BaseAgent):
 
     
     def _analyze_sentiment(self, text: str) -> str:
-        """Simple sentiment analysis based on keywords."""
-        if not text:
+        """
+        Simple LLM-based sentiment analysis.
+        Uses the language model to analyze sentiment and return a score.
+        """
+        if not text or not text.strip():
             return "neutral"
         
-        text_lower = text.lower()
+        # Create a simple prompt for sentiment analysis
+        prompt = f"""
+        Analyze the sentiment of the following text and return ONLY one of these three options: "positive", "negative", or "neutral".
         
-        # Positive keywords
-        positive_words = ["positive", "growth", "increase", "profit", "success", "strong", "beat", "exceed", "up", "rise", "gain"]
-        # Negative keywords
-        negative_words = ["negative", "decline", "decrease", "loss", "weak", "miss", "down", "fall", "drop", "risk", "concern"]
+        Text: {text[:1000]}  # Limit to first 1000 characters
         
-        positive_count = sum(1 for word in positive_words if word in text_lower)
-        negative_count = sum(1 for word in negative_words if word in text_lower)
+        Consider financial context - words like "earnings beat", "growth", "profit" are positive. Words like "loss", "decline", "miss" are negative.
         
-        if positive_count > negative_count:
-            return "positive"
-        elif negative_count > positive_count:
-            return "negative"
-        else:
+        Response (only one word):
+        """
+        
+        try:
+            # Use the LLM to get sentiment
+            response = self.llm.invoke(prompt)
+            # Extract content from AIMessage object
+            sentiment = response.content.strip().lower()
+            
+            # Validate the response
+            if sentiment in ["positive", "negative", "neutral"]:
+                return sentiment
+            else:
+                # Fallback to neutral if response is unexpected
+                return "neutral"
+                
+        except Exception as e:
+            print(f"LLM sentiment analysis error: {e}")
             return "neutral"
+    
+
     
     def _calculate_sentiment_distribution(self, articles: List[Dict[str, Any]]) -> Dict[str, int]:
         """Calculate sentiment distribution from articles."""
@@ -336,7 +352,7 @@ Ticker: {ticker}
 Finnhub News (Top 3) (Source: Finnhub API):
 {finnhub_text if finnhub_text else "No Finnhub news available"}
 
-Web News (Top 3) (Source: Google Custom Search):
+Web News (Top 3) (Source: Tavily Search):
 {web_text if web_text else "No web news available"}
 
 News Sentiment Analysis:

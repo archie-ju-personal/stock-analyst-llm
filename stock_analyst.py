@@ -45,7 +45,7 @@ class AgentState(TypedDict):
 class LangGraphStockAnalyst:
     """Main coordinator for the stock analysis system using LangGraph."""
 
-    def __init__(self, model_name: str = "gpt-4", debug: bool = False):
+    def __init__(self, model_name: str = "gpt-4o-mini", debug: bool = False):
         """
         Initialize the LangGraphStockAnalyst system.
 

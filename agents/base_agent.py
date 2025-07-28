@@ -13,7 +13,7 @@ load_dotenv()
 class BaseAgent(ABC):
     """Base class for all agents in the stock analysis system."""
     
-    def __init__(self, model_name: str = "gpt-4", temperature: float = 0.1):
+    def __init__(self, model_name: str = "gpt-4o-mini", temperature: float = 0.1):
         """
         Initialize the base agent.
         

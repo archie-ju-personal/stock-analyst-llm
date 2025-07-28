@@ -19,7 +19,7 @@ from urllib.parse import urlparse
 class SocialMediaAgent(BaseAgent):
     """Agent responsible for collecting and analyzing social media sentiment."""
     
-    def __init__(self, model_name: str = "gpt-4", temperature: float = 0.1):
+    def __init__(self, model_name: str = "gpt-4o-mini", temperature: float = 0.1):
         super().__init__(model_name, temperature)
         # Use the Bearer Token for app-only authentication
         self.twitter_bearer_token = os.getenv("TWITTER_BEARER_TOKEN")
@@ -273,33 +273,39 @@ class SocialMediaAgent(BaseAgent):
 
     
     def _analyze_news_sentiment(self, text: str) -> str:
-        """Analyze sentiment of news text."""
-        if not text:
+        """
+        Simple LLM-based sentiment analysis.
+        Uses the language model to analyze sentiment and return a score.
+        """
+        if not text or not text.strip():
             return "neutral"
         
-        text_lower = text.lower()
+        # Create a simple prompt for sentiment analysis
+        prompt = f"""
+        Analyze the sentiment of the following text and return ONLY one of these three options: "positive", "negative", or "neutral".
         
-        # Enhanced sentiment keywords
-        positive_words = [
-            "positive", "growth", "increase", "profit", "success", "strong", "beat", "exceed", 
-            "up", "rise", "gain", "surge", "jump", "soar", "rally", "boost", "improve", "expand",
-            "record", "high", "outperform", "bullish", "optimistic", "favorable", "robust"
-        ]
+        Text: {text[:1000]}  # Limit to first 1000 characters
         
-        negative_words = [
-            "negative", "decline", "decrease", "loss", "weak", "miss", "down", "fall", "drop", 
-            "risk", "concern", "worry", "fear", "crash", "plunge", "tumble", "slump", "downturn",
-            "bearish", "pessimistic", "unfavorable", "struggle", "challenge", "pressure"
-        ]
+        Consider financial context - words like "earnings beat", "growth", "profit" are positive. Words like "loss", "decline", "miss" are negative.
         
-        positive_count = sum(1 for word in positive_words if word in text_lower)
-        negative_count = sum(1 for word in negative_words if word in text_lower)
+        Response (only one word):
+        """
         
-        if positive_count > negative_count:
-            return "positive"
-        elif negative_count > positive_count:
-            return "negative"
-        else:
+        try:
+            # Use the LLM to get sentiment
+            response = self.llm.invoke(prompt)
+            # Extract content from AIMessage object
+            sentiment = response.content.strip().lower()
+            
+            # Validate the response
+            if sentiment in ["positive", "negative", "neutral"]:
+                return sentiment
+            else:
+                # Fallback to neutral if response is unexpected
+                return "neutral"
+                
+        except Exception as e:
+            print(f"LLM sentiment analysis error: {e}")
             return "neutral"
     
     def _aggregate_sentiment(self, data: Dict[str, Any]) -> Dict[str, Any]:

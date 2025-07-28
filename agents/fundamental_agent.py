@@ -13,7 +13,7 @@ from .base_agent import BaseAgent
 class FundamentalAgent(BaseAgent):
     """Agent responsible for analyzing fundamental company data."""
     
-    def __init__(self, model_name: str = "gpt-4", temperature: float = 0.1):
+    def __init__(self, model_name: str = "gpt-4o-mini", temperature: float = 0.1):
         super().__init__(model_name, temperature)
         # Initialize Finnhub client
         self.finnhub_client = finnhub.Client(api_key=os.getenv("FINNHUB_API_KEY"))

@@ -265,6 +265,8 @@ def save_raw_data_files(report, ticker, filename_base):
         f.write("- All financial ratios and metrics are real-time\n")
         f.write("- All data is verifiable through respective APIs\n")
 
+
+
 def main():
     """Main function to run the stock analysis system."""
     console = Console()

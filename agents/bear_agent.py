@@ -8,7 +8,7 @@ from .base_agent import BaseAgent
 class BearAgent(BaseAgent):
     """Agent that takes a bearish stance on the stock."""
     
-    def __init__(self, model_name: str = "gpt-4", temperature: float = 0.3):
+    def __init__(self, model_name: str = "gpt-4o-mini", temperature: float = 0.3):
         super().__init__(model_name, temperature)
     
     def collect_data(self, ticker: str) -> Dict[str, Any]:

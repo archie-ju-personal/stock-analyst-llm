@@ -12,7 +12,7 @@ from .base_agent import BaseAgent
 class FinancialMarketAgent(BaseAgent):
     """Agent responsible for collecting and analyzing financial market data."""
     
-    def __init__(self, model_name: str = "gpt-4", temperature: float = 0.1):
+    def __init__(self, model_name: str = "gpt-4o-mini", temperature: float = 0.1):
         super().__init__(model_name, temperature)
     
     def collect_data(self, ticker: str) -> Dict[str, Any]:
